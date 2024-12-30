@@ -9,7 +9,7 @@ inputs:
   working-directory:
     description: "The working directory, where the scan comman should run, by default will be /gitub/workspace"
     required: false
-    default: ${{ github.workspace }}
+    default: "/github/workspace"
   go-version:
     description: "Can be any Tag for the golang docker image, but should ideally match your runtime go version. By default 1.21.4 is assumed"
     required: false
