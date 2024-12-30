@@ -42,7 +42,7 @@ runs:
       shell: bash
       working-directory: ${{ inputs.workdir }}
     - id: run
-      run: docker run --rm -v $(pwd):/github/workspace --workdir ${{ inputs.workdir }} -e GITHUB_TOKEN=${{ inputs.github-token }} -e STRICT=${{ inputs.fail-on-vuln }} -e PACKAGE=${{ inputs.package }} -e SKIP_UPLOAD=${{ inputs.skip-upload }} -e DEBUG=${DEBUG} -e GITHUB_REPOSITORY=${{ github.repository }} -e GITHUB_REF=${{ github.ref }} -e GITHUB_SHA=${{ github.sha }} templum/govulncheck-action:local
+      run: docker run --rm -v $(pwd):/github/workspace --workdir /github/workspace -e GITHUB_TOKEN=${{ inputs.github-token }} -e STRICT=${{ inputs.fail-on-vuln }} -e PACKAGE=${{ inputs.package }} -e SKIP_UPLOAD=${{ inputs.skip-upload }} -e DEBUG=${DEBUG} -e GITHUB_REPOSITORY=${{ github.repository }} -e GITHUB_REF=${{ github.ref }} -e GITHUB_SHA=${{ github.sha }} templum/govulncheck-action:local
       shell: bash
       working-directory: ${{ inputs.workdir }}
 
