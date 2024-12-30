@@ -10,6 +10,8 @@ RUN go mod download
 
 COPY . .
 
+RUN ls -la 
+
 RUN CGO_ENABLED=0 go build -ldflags="-w -s" -v -o action .
 # This golang version determines in which golang environment the customer code is checked
 FROM golang:$GOLANG_VERSION
