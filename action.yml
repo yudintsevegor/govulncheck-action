@@ -43,7 +43,7 @@ runs:
     - id: determine-working-directory
       run: |
         ls -la 
-        source determine-wd.sh ${{ github.workspace }} ${{ inputs.working-directory }}
+        source ${{ github.action_path }}/script.shdetermine-wd.sh ${{ github.workspace }} ${{ inputs.working-directory }}
         echo "DOCKER_WD=${DOCKER_WD}" >> "$GITHUB_ENV"
         echo "GITHUBH_WD=${GITHUBH_WD}" >> "$GITHUB_ENV"
       shell: bash
