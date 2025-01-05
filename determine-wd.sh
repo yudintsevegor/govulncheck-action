@@ -7,7 +7,7 @@ input_working_directory=$2
 if [ -z $github_workspace ]; then
     echo "The first argument (github.workspace) is required.";
     exit 1;
-elif [ -z $input_working_directory ]; then
+elif [[ $github_workspace = $input_working_directory || -z $input_working_directory ]]; then
     export DOCKER_WD=$github_workspace;
     export GITHUBH_WD=$github_workspace;
 elif [[ $input_working_directory =~ ^/ ]]; then 
