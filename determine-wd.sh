@@ -18,8 +18,8 @@ else
     export GITHUBH_WD=$input_working_directory
 fi
 
-echo "Export DOCKER_WD=$DOCKER_WD Executed"
-echo "Export GITHUBH_WD=$GITHUBH_WD Executed"
+echo "export DOCKER_WD=$DOCKER_WD"
+echo "export GITHUBH_WD=$GITHUBH_WD"
 
 
 
