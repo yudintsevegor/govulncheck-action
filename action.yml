@@ -43,7 +43,7 @@ runs:
     - id: run
       run: docker run --rm -v $(pwd):${{ inputs.working-directory }} --workdir ${{ inputs.working-directory }} -e GITHUB_TOKEN=${{ inputs.github-token }} -e STRICT=${{ inputs.fail-on-vuln }} -e PACKAGE=${{ inputs.package }} -e SKIP_UPLOAD=${{ inputs.skip-upload }} -e DEBUG=${DEBUG} -e GITHUB_REPOSITORY=${{ github.repository }} -e GITHUB_REF=${{ github.ref }} -e GITHUB_SHA=${{ github.sha }} templum/govulncheck-action:local
       shell: bash
-      working-directory: .${{ inputs.working-directory }}
+      working-directory: ${{ inputs.working-directory }}
 
 branding:
   icon: "alert-octagon"
